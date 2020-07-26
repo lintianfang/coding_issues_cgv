@@ -1,0 +1,24 @@
+
+
+    p- 反复编译程序运行没变化
+        删除.vs临时文件夹
+    p- "vec3" 索引不到?
+        继承 cgv::render::render_types
+    p- 在cgv中设定灯光位置?
+        auto_set_lights_in_current_shader_program in gl_context creation 
+        void context::set_current_lights(shader_program& prog) const in context.cxx 
+        light_source.hh 
+        在context的构造方法中!进行的初始化
+            default_light_source[0].set_local_to_eye(true);
+            default_light_source[0].set_position(vec3(-0.4f, 0.3f, 0.8f));
+            default_light_source[1].set_local_to_eye(true);
+            default_light_source[1].set_position(vec3(0.0f, 1.0f, 0.0f));
+    p- 自己写shader进行渲染（custom shaders）?
+        take rgb_diffuse_prog as example 
+        steps 
+            new shader_test.glpr, shader_test.glvs, shader_test.glfs 
+            add cpu-side code  
+    p- 高效渲染？
+        class CGV_API sphere_renderer : public surface_renderer
+        class CGV_API surface_renderer : public group_renderer
+    
