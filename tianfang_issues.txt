@@ -1,2 +1,14 @@
 p- please put nng.dll into system32 file
-p- please use win32 wen using kinect v1
+p- please use win32 when using kinect v1
+p- please debug your error type or information by adding breakpoint at row 184 in the path: \project\cgv\cgv\render\context.cpp
+
+/// error handling
+void context::error(const std::string& message, const render_component* rc) const
+{
+	if (rc) //add breakpoint
+		rc->last_error = message;
+	if (get_render_config()->show_error_on_console)
+		std::cerr << message << std::endl;
+	if (get_render_config()->abort_on_error)
+		abort();
+}
