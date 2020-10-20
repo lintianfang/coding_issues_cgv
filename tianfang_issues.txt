@@ -12,3 +12,12 @@ void context::error(const std::string& message, const render_component* rc) cons
 	if (get_render_config()->abort_on_error)
 		abort();
 }
+
+p- About EID_POSE, when int ci = vrpe.get_trackable_index();
+
+if ci == -1, tracking the headset, that is to say HMD,
+if ci == 0, tracking the right-hand controller,
+if ci == 1, tracking the left-hand controller,
+if there are more devices, e.g. trackers, the ci will be uncertain index, but the HMD should always be -1
+
+p- The tracking of HMD is very unstable, the reason should be investigated.
