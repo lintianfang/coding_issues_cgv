@@ -25,3 +25,5 @@ p- The tracking of HMD is very unstable, the reason should be investigated.
 p- in the config file, DONT write a space " "
 
 p- vrpe.get_rotation_quaternion() is different from vrpe.get_quaternion(), if you want to use the orientation of the tracking device, you should choose vrpe.get_quaternion()
+
+p- when you only turn on one controller, the trackable_index is 2 instead of 0 or 1, when you turn on two controllers, the trackable_index will be 0 or 1 again 
