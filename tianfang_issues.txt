@@ -29,3 +29,14 @@ p- vrpe.get_rotation_quaternion() is different from vrpe.get_quaternion(), if yo
 p- when you only turn on one controller, the trackable_index is 2 instead of 0 or 1, when you turn on two controllers, the trackable_index will be 0 or 1 again 
 
 p- when you press F12, it is not sure if it goes to its definition, maybe go to its child class or its parent class
+
+p- how to use renderer
+
+auto& rcr = cgv::render::ref_rounded_cone_renderer(ctx);  
+if (!hue_plane.empty()) {
+	rcr.set_render_style(cone_style);
+	rcr.set_position_array(ctx, hue_plane);
+	rcr.set_color_array(ctx, hue_colors);
+	rcr.render(ctx, 0, hue_plane.size());
+        //do not disable the renderer here
+}
