@@ -40,3 +40,7 @@ if (!hue_plane.empty()) {
 	rcr.render(ctx, 0, hue_plane.size());
         //do not disable the renderer here
 }
+
+p- how to build shader program with error printing out, you need set the third parameter as TRUE, as shown in below
+
+prog.build_program(ctx, "shader.glpr",true);
